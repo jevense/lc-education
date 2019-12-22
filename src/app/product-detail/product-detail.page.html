@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="返回"></ion-back-button>
+        </ion-buttons>
+        <ion-title>商品详情</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-slides pager [options]="slideOpts">
+        <ng-container *ngFor="let item of carousel">
+            <ion-slide *ngIf="item">
+                <ion-img [src]="item['imagePath']" alt="轮播图"></ion-img>
+            </ion-slide>
+        </ng-container>
+    </ion-slides>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-text style="font-size: 1.2rem;">
+                    {{item.name}}
+                </ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col style="display: flex;align-items: center;">
+                <ion-text color="primary" style="font-size: 1.2rem;">
+                    {{item.price| number : '.2' | currency : '￥'}}
+                </ion-text>
+            </ion-col>
+            <ion-col size="4" style="display: flex;justify-content: flex-end;align-items: center;">
+                <ion-text>购买数量：</ion-text>
+            </ion-col>
+            <ion-col size="4">
+                <Stepper [defaultValue]="1" [min]="1" [max]="10"
+                         [(ngModel)]="item.count"
+                         [showNumber]="true"></Stepper>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-item-divider>
+        <ion-label>商品详情</ion-label>
+    </ion-item-divider>
+    <ion-img *ngFor="let item of carousel" [src]="item['imagePath']" alt="轮播图"></ion-img>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button>
+                <div>
+                    <ion-icon name="chatbubbles"></ion-icon>
+                    <div style="font-size: small;">客服</div>
+                </div>
+            </ion-button>
+            <ion-button>
+                <div>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <div style="font-size: small;">收藏</div>
+                </div>
+            </ion-button>
+            <ion-button [routerLink]="['/cart']">
+                <div>
+                    <ion-icon name="cart"></ion-icon>
+                    <div style="font-size: small;">购物车</div>
+                </div>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-segment>
+                <ion-segment-button (click)="addToCart()">
+                    <ion-label class="ion-padding-half-horizontal">加入购物车</ion-label>
+                </ion-segment-button>
+                <ion-segment-button (click)="buy()">
+                    <ion-label class="ion-padding-half-horizontal">立即购买</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

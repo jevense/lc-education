@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            课程
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<super-tabs>
+    <super-tabs-toolbar slot="top" scrollable>
+        <super-tab-button>
+            <ion-label>语文</ion-label>
+        </super-tab-button>
+        <super-tab-button>
+            <ion-label>数学</ion-label>
+        </super-tab-button>
+        <super-tab-button>
+            <ion-label>英语</ion-label>
+        </super-tab-button>
+        <super-tab-button>
+            <ion-label>面试</ion-label>
+        </super-tab-button>
+        <super-tab-button>
+            <ion-label class="ion-text-nowrap">综合素质</ion-label>
+        </super-tab-button>
+    </super-tabs-toolbar>
+    <super-tabs-container>
+        <super-tab>
+            <ion-nav [root]="firstPage"></ion-nav>
+        </super-tab>
+        <super-tab>
+            <ion-nav [root]="firstPage"></ion-nav>
+        </super-tab>
+        <super-tab>
+            <ion-nav [root]="firstPage"></ion-nav>
+        </super-tab>
+        <super-tab>
+            <ion-nav [root]="firstPage"></ion-nav>
+        </super-tab>
+        <super-tab>
+            <ion-nav [root]="firstPage"></ion-nav>
+        </super-tab>
+    </super-tabs-container>
+</super-tabs>

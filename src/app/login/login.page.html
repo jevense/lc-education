@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="返回"></ion-back-button>
+        </ion-buttons>
+        <ion-title>登录</ion-title>
+        <ion-buttons slot="end">
+            <ion-button>
+                注册
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+<!--    <ion-grid>-->
+<!--        <ion-row>-->
+<!--            <ion-col>-->
+<!--                <ion-avatar>-->
+<!--                    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">-->
+<!--                </ion-avatar>-->
+<!--            </ion-col>-->
+<!--        </ion-row>-->
+<!--    </ion-grid>-->
+
+    <ion-item lines="full">
+        <ion-input type="tel"
+                   placeholder="请输入手机号"
+                   inputmode="tel"
+                   pattern="tel"
+                   clearInput="true"
+                   required="true"
+                   #username>
+
+        </ion-input>
+    </ion-item>
+    <ion-item lines="full">
+        <ion-input type="password"
+                   placeholder="请输入密码"
+                   required="true"
+                   #password>
+
+        </ion-input>
+    </ion-item>
+
+    <ion-item lines="none"></ion-item>
+    <ion-button expand="block" color="success" (click)="login(username, password)">
+        登录
+    </ion-button>
+    <ion-item lines="none">
+        <ion-button slot="end" fill="clear">找回密码</ion-button>
+    </ion-item>
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "wc-education",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

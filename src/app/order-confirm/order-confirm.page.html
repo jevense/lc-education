@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="返回"></ion-back-button>
+        </ion-buttons>
+        <ion-title>确认订单</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-item detail lines="none" (click)="addressList()">
+            <ion-avatar slot="start">
+                <ion-icon name="pin"></ion-icon>
+            </ion-avatar>
+            <ion-label>
+                <h2>
+                    <ion-text>卢杰文</ion-text>
+                    <ion-text class="ion-margin" style="font-size: smaller;" color="medium">15110080976</ion-text>
+                </h2>
+                <div class="ion-text-wrap" style="font-size: smaller;">江苏省淮安市淮阴区王营镇淮河东路xxx号楼xxx室</div>
+            </ion-label>
+        </ion-item>
+    </ion-card>
+    <ion-card>
+        <ion-list lines="full">
+            <ion-item *ngFor="let item of items">
+                <ion-thumbnail class="ion-margin-vertical lc-cover">
+                    <ion-img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="></ion-img>
+                </ion-thumbnail>
+                <ion-label class="lc-info">
+                    <h3 class="ion-text-wrap">{{item.name}}</h3>
+                    <p class="ion-text-end">
+                        {{item.price| number : '.2' | currency : '￥'}}
+                    </p>
+                    <p class="ion-text-end">
+                        X {{item.count}}
+                    </p>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-text color="medium" style="font-size: smaller;">共：{{count}}件,</ion-text>
+            <ion-text class="ion-margin-half-horizontal">合计：{{total| number : '.2' | currency : '￥'}}</ion-text>
+            <ion-button color="danger" shape="round" fill="solid" (click)="pay()">
+                <ion-text class="ion-padding-horizontal">提交订单</ion-text>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

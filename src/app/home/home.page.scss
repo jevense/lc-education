@@ -1,0 +1,73 @@
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+.top-menu {
+
+  $top-menu-icon-width: 4rem;
+  $top-menu-icon: (
+                  ("5p3", "chinese", "free", "shizi"),
+                  ("database", "disease-all", "learn"),
+                  ("magazine", "operation", "west"),
+  );
+
+  .top-menu-item {
+    //max-width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .top-menu-icon {
+      margin: 0.2rem 0;
+      background: url(/assets/sprite-3.png) no-repeat {
+        size: $top-menu-icon-width*4 $top-menu-icon-width*3;;
+      }
+      width: $top-menu-icon-width;
+      height: $top-menu-icon-width;
+    }
+
+    @for $i from 0 to length($top-menu-icon) {
+      $row: nth($top-menu-icon, $i+1);
+      @for $j from 0 to length($row) {
+        $item: nth($row, $j+1);
+        .top-menu-icon.top-menu-icon-#{$item} {
+          background-position: (-$j*$top-menu-icon-width) (-$i*$top-menu-icon-width);
+        }
+      }
+    }
+
+    .top-menu-name {
+      font-size: small;
+    }
+  }
+
+  border-bottom: 2px solid lightgray;
+}
+
+.imed-list-item {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #EEEFF0;
+
+  .justify-content-around {
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  .imed-list-item-label {
+    font-size: small;
+
+    div {
+      margin: .2rem 0;
+    }
+  }
+}
+
+.booking-modal {
+  --height: 50% !important;
+}

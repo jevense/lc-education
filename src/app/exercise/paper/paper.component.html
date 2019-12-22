@@ -1,0 +1,11 @@
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let item of items;let i = index;" [routerLink]="['/examination']">
+            <ion-label class="ion-text-wrap">
+                <h3>2019年普通高招全国统一试卷原创模拟题-语文({{i + 1}})</h3>
+                <p>共{{23}}道题，有{{4555}}人刷过</p>
+            </ion-label>
+            <ion-text style="font-size: smaller;">未完成</ion-text>
+        </ion-item>
+    </ion-list>
+</ion-content>

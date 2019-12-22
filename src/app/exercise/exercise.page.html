@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <ion-button (click)="choiceYear()" fill="clear">
+                <ion-icon slot="end" name="arrow-down" size="small"></ion-icon>
+                {{year}}
+            </ion-button>
+        </ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button text="返回"></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button (click)="choiceArea()">
+                <ion-icon slot="start" name="pin" size="small"></ion-icon>
+                {{shortName}}
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<super-tabs>
+    <super-tabs-toolbar slot="top" scrollable>
+        <super-tab-button *ngFor="let item of items">
+            <ion-label>{{item.name}}</ion-label>
+        </super-tab-button>
+    </super-tabs-toolbar>
+    <super-tabs-container>
+        <super-tab *ngFor="let item of items">
+            <ion-nav [root]="firstPage" [rootParams]="{type:item.code}"></ion-nav>
+        </super-tab>
+    </super-tabs-container>
+</super-tabs>

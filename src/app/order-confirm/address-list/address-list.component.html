@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>我的收获地址</ion-title>
+        <ion-buttons slot="start">
+            <ion-button (click)="close()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button (click)="add()">
+                新增
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-avatar slot="start">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+        </ion-avatar>
+        <ion-label>
+            <h2>
+                <ion-text>卢杰文</ion-text>
+                <ion-text class="ion-margin" style="font-size: smaller;" color="medium">15110080976</ion-text>
+            </h2>
+            <div class="ion-text-wrap" style="font-size: smaller;">江苏省淮安市淮阴区王营镇淮河东路xxx号楼xxx室</div>
+        </ion-label>
+        <ion-button fill="outline" slot="end" (click)="add()">编辑</ion-button>
+    </ion-item>
+</ion-content>

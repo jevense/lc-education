@@ -1,0 +1,66 @@
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh()">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-slides pager [options]="slideOpts">
+        <ng-container *ngFor="let item of carousel">
+            <ion-slide *ngIf="item" [routerLink]="['/product-detail',item.id]">
+                <ion-img [src]="item['imagePath']" alt="轮播图"></ion-img>
+            </ion-slide>
+        </ng-container>
+    </ion-slides>
+
+    <ion-item detail lines="none" [routerLink]="['/product-list/senior']">
+        <ion-title>高中职教辅</ion-title>
+        <ion-note slot="end">更多</ion-note>
+    </ion-item>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6" *ngFor="let item of items" [routerLink]="['/product-detail',item.id]">
+                <ion-img class="lc-cover-img"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="></ion-img>
+                <ion-label>
+                    <h3 class="ion-text-wrap">{{item.name}}</h3>
+                    <p>{{item.price| number : '.2' | currency : '￥'}}</p>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-item detail lines="none">
+        <ion-title>初升高教辅</ion-title>
+        <ion-note slot="end">更多</ion-note>
+    </ion-item>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6" *ngFor="let item of items">
+                <ion-img class="lc-cover-img"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="></ion-img>
+                <ion-label>
+                    <h3 class="ion-text-wrap">{{item.name}}</h3>
+                    <p>{{item.price| number : '.2' | currency : '￥'}}</p>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-item detail lines="none">
+        <ion-title>小升初教辅</ion-title>
+        <ion-note slot="end">更多</ion-note>
+    </ion-item>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6" *ngFor="let item of items">
+                <ion-img class="lc-cover-img"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="></ion-img>
+                <ion-label>
+                    <h3 class="ion-text-wrap">{{item.name}}</h3>
+                    <p>{{item.price| number : '.2' | currency : '￥'}}</p>
+                </ion-label>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
